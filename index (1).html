@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charan Tej D's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="charan's_pic.JPG" type="image/jpeg"> <!-- Favicon link -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Arial Black', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .details {
+            display: none;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .show-btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .show-btn:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+.details, .project-card ul {
+    text-align: justify;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: #ffff; font-weight: bold; font-family: 'Lucida Handwriting', cursive;">Charan Tej D</h1>
+        <p>Welcome to my Portfolio !</p>
+    </header>
+
+    <section id="biodata" class="container">
+        <img src="charan's_pic.JPG" alt="Charan's Picture">
+        <p>
+            Name: Charan Tej D <br>
+            Profession: Senior Validation Engineer (CSV / CQV) <br>
+            Location: Smithfield, RI <br>
+            Contact: reachctc@gmail.com <br>
+        </p>
+    </section>
+
+    <section id="summary" class="container">
+        <h2>Professional Summary</h2>
+        <ul>
+            <li>7+ years of diverse experience in Computer System Validation (CSV) and Commissioning, Qualification, and Validation (CQV), with strong exposure to manufacturing, processing, and laboratory equipment across the pharmaceutical and biotech industries.</li>
+            <li>Skilled in drafting core validation deliverables including User Requirement Specifications (URS), Validation Plans, Risk Assessments, IQ/OQ/PQ protocols and supplemental protocols, Traceability Matrices, Summary Reports, Discrepancy Reports, deviations, and CAPA.</li>
+            <li>Experienced in creating and executing Business Requirements, Functional Specifications, Test Plans, Test Cases, Test Procedures, and Test Summary Reports, covering discovery, design, configuration, development, and functional testing for GxP systems, equipment, and laboratory instruments.</li>
+            <li>Strong background in commissioning and qualification of utilities and facilities, including HVAC, water systems (Milli-Q, DI, WFI), gas distribution systems, and Grade A/Grade B clean rooms and manufacturing areas.</li>
+            <li>Expertise in qualifying complex manufacturing and laboratory equipment such as autoclaves, lyophilizers, bioreactors, fermenters, filling systems, mixers, sterilizers, isolators, chromatography skids, and Controlled Temperature Units (CTUs) including freezers, ultra-low freezers, and incubators, along with execution of Media Fill (Aseptic Process Simulation) studies for vial filling operations.</li>
+            <li>Authored and reviewed Media Fill protocols and final reports, defining fill volumes, incubation parameters, and acceptance criteria to ensure aseptic process simulation studies met GMP documentation standards.</li>
+            <li>Extensive experience executing Media Fill (Aseptic Process Simulation) studies for vial filling and aseptic manufacturing operations, including qualification of supporting utilities (HVAC, compressed gases) and equipment (BSCs, LAF units, autoclaves) to ensure aseptic processing readiness and annual requalification compliance.</li>
+            <li>Experienced in validating automation and computerized systems including DeltaV, DCS/PCS, SCADA, PLC, HMI, Historian, Building Automation Systems (BAS), Building Management Systems (BMS), Environmental Monitoring Systems (EMS), MES applications, and Quality Management Systems (QMS).</li>
+            <li>Sound knowledge of GAMP 5 and data integrity principles, with experience performing gap analysis, remediation, periodic reviews, and change management for both laboratory and manufacturing computer systems in compliance with FDA and associated regulatory requirements.</li>
+            <li>Proficient with validation software and lab instrument applications including Kneat, Valgenesis, SmartSolve, Empower, and Unicorn for deliverables drafting, routing, and execution.</li>
+            <li>Effective collaborator with strong multitasking, critical thinking, and communication skills, partnering closely with Quality, Engineering, Manufacturing, Metrology, and IT teams to complete validation activities across multiple projects.</li>
+        </ul>
+    </section>
+
+<section id="experience" class="container">
+    <h2>My Professional Experience</h2>
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>Sr Validation Engineer: Organogenesis</h3>
+            <p><strong>Duration:</strong> November 2025 – Present | Smithfield, RI</p>
+            <button class="show-btn" onclick="toggleDetails('details1')">Show Details</button>
+            <div id="details1" class="details">
+                <ul>
+                    <li>Performed equipment qualification and validation for Controlled Temperature Units (CTUs) including freezers, ultra-low freezers, liquid nitrogen (LN2) freezers, chest freezers, refrigerators, and undercounter refrigerators.</li>
+                    <li>Executed qualification of incubators including QC incubators, Percival incubators, and Wheaton incubators.</li>
+                    <li>Qualified Biosafety Cabinets (BSCs), Laminar Airflow (LAF) units, Autoclaves, and Depyrogenation Ovens/Tunnels, including smoke studies to verify airflow patterns and containment integrity in support of aseptic processing areas.</li>
+                    <li>Executed Media Fill (Aseptic Process Simulation) studies for manufacturing operations to qualify aseptic processing capability and support annual requalification requirements.</li>
+                    <li>Qualified compressed gas systems (nitrogen, Clean Dry Air) supporting media fill and aseptic processing operations, verifying gas purity and delivery performance to meet aseptic manufacturing requirements.</li>
+                    <li>Performed environmental monitoring and particle count verification for BSCs and autoclaves during media fill execution to confirm aseptic conditions and support annual requalification.</li>
+                    <li>Performed qualification of both QC and Refrigerated centrifuges and coldrooms to support ongoing GMP compliance.</li>
+                    <li>Qualified 8-cavity sealers, heat sealers, lasers, depyrogenation ovens, autoclaves, waterbaths, and roller racks across manufacturing and laboratory areas.</li>
+                    <li>Identified, investigated, and authored deviations for out-of-specification and non-conforming results during qualification execution.</li>
+                    <li>Drafted Installation, Operational, and Performance Qualification (IQ/OQ/PQ) protocols for laboratory and manufacturing equipment.</li>
+                    <li>Documented and reviewed validation summary reports, ensuring compliance with cGMP and site quality standards.</li>
+                    <li>Managed validation documentation and execution using Lives International, Veeva, SmartSolve, and XpertVal64.</li>
+                    <li>Performed temperature mapping and requalification studies for CTUs and coldrooms to verify uniformity and recovery within specified operating ranges.</li>
+                    <li>Reviewed and approved validation protocols and reports authored by peers, ensuring consistency with site SOPs, cGMP, and FDA regulatory requirements.</li>
+                    <li>Collaborated cross-functionally with Quality, Engineering, and Facilities teams to resolve deviations, support CAPA implementation, and maintain equipment qualification schedules and status tracking.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Sr Validation Engineer: Eli Lilly and Company</h3>
+            <p><strong>Duration:</strong> March 2025 – November 2025 | Pleasant Prairie, WI</p>
+            <button class="show-btn" onclick="toggleDetails('details2')">Show Details</button>
+            <div id="details2" class="details">
+                <ul>
+                    <li>Led the qualification of over 25 GMP-compliant laboratory, analytical, and manufacturing systems, including isolators, RABS, biosafety cabinets, vial filling lines, and a wide range of laboratory instruments such as HPLC systems, MALDI-TOF mass spectrometers, UV-Vis spectrophotometers, pH meters, TOC analyzers, and analytical balances.</li>
+                    <li>Executed IQ/OQ/PQ protocols for both standalone and computerized systems, ensuring adherence to FDA regulations, 21 CFR Part 11, data integrity principles, and site quality standards.</li>
+                    <li>Supported moist heat sterilization validation by qualifying new autoclaves, optimizing load configurations, and executing temperature mapping studies using Ellab data loggers, Kaye Validators, Kaye Val Probes, and Vaisala systems.</li>
+                    <li>Managed qualification and validation of auxiliary lab and environmental equipment including microcentrifuges, osmometers, Milli-Q systems, water baths, vacuum systems, pipettes, vortex mixers, and viable/non-viable environmental samplers (e.g., Climet).</li>
+                    <li>Performed full lifecycle commissioning and qualification (C&Q) activities for critical utilities and manufacturing systems including HVAC, terminal sterilizers, purified water systems, and parts washers, ensuring equipment was installed, operated, and performed as intended.</li>
+                    <li>Oversaw multiple validation projects, including automation upgrades, utility expansions (e.g., 90-psi compressed air system), and lab modernization efforts, ensuring timely execution and documentation.</li>
+                    <li>Authored and reviewed validation documentation including URS, risk assessments, traceability matrices, and summary reports, maintaining alignment with site SOPs and global policies.</li>
+                    <li>Led data integrity and gap assessments covering computerized and hybrid systems, evaluating record types, data flows, audit trails, user access, and system configurations in line with ALCOA+ and 21 CFR Part 11 requirements.</li>
+                    <li>Digitally managed validation activities through Kneat Gx, enabling end-to-end documentation traceability, efficient collaboration, and audit readiness.</li>
+                    <li>Collaborated cross-functionally with Quality, Engineering, and Manufacturing to resolve deviations, implement CAPAs, and support formal change control and impact assessments.</li>
+                    <li>Contributed to requalification planning and periodic reviews as part of the site Validation Master Plan (VMP), and participated in internal, client, and regulatory audits by maintaining well-organized validation packages.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Sr Validation Engineer: Hovione New Jersey</h3>
+            <p><strong>Duration:</strong> November 2022 – March 2025 | East Windsor, NJ</p>
+            <button class="show-btn" onclick="toggleDetails('details3')">Show Details</button>
+            <div id="details3" class="details">
+                <ul>
+                    <li>Drafted and executed Installation, Operational and Performance Qualification protocols for HVAC and Water systems like Milli Q water, Deionized water (DI), and Water for Injection (WFI), supporting media fill and aseptic processing areas.</li>
+                    <li>Worked on commissioning and qualification of the gaseous distribution systems like nitrogen, Clean Dry Air (CDA), carbon dioxide etc.</li>
+                    <li>Executed Media Fill (Aseptic Process Simulation) studies to verify aseptic manufacturing readiness and support annual requalification requirements, in coordination with utility and facilities qualification activities.</li>
+                    <li>Executed Installation, Operational, and Performance Qualification (IOPQ) protocols for process equipment including Zonal Ultra Centrifuge, Tangential Flow Filtration system, 500L & 2000L Single Use Bioreactors, Chromatography column skids, Biosafety Cabinets, Isolators, Vial Washer, Autoclave Transition Isolator, and benchtop equipment such as balances, tube welders, bio welders, and tubing sealers.</li>
+                    <li>Led execution of IQ/OQ/PQ protocols for automated visual inspection systems supporting vial filling operations, ensuring regulatory compliance and operational readiness.</li>
+                    <li>Executed temperature mapping and requalification studies for CTUs and coldrooms using Kaye Validator AVS, Kaye 2000, and Ellab data loggers to support ongoing GMP storage requirements.</li>
+                    <li>Generated and executed commissioning, decommissioning, and IQ/OQ documentation for HVAC/dehumidification systems supporting manufacturing suites, including chilled water and compressed air utility tie-ins.</li>
+                    <li>Conducted various smoke studies to study the air flow pattern for BSCs (Biosafety Cabinets), Laminar Airflow Pass Throughs and whole room smoke study.</li>
+                    <li>Developed and executed validation protocols (IQ, OQ, PQ) for room qualifications, including environmental monitoring and particle count testing to verify cleanliness and controlled conditions of classified areas.</li>
+                    <li>Troubleshot real-time automated inspection system issues including camera alignment, conveyor timing, and vision software calibration to maintain inspection accuracy and minimize line downtime.</li>
+                    <li>Managed compliant documentation in Valgenesis and Veeva, coordinating with quality and engineering teams on deviations and CAPAs.</li>
+                    <li>Led computer system validation activities for LIMS, developing and executing User Acceptance Testing, test plans, data migration plans, and IQ/OQ/PQ deliverables, including validation templates for LIMS implementation and integration with Veeva Vault QMS and Trackwise.</li>
+                    <li>Reviewed Risk Assessment Documentation to check the areas with deficiency, reviewed Corrective and Preventive Action (CAPA) and drafted Remediation Plans for the project management approval after the GAP Analysis.</li>
+                    <li>Performed all phases of end-to-end testing like User Acceptance Testing, Functionality Testing, Regression Testing, Negative Testing, and System Testing.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Sr Validation Engineer: Amneal Pharmaceuticals</h3>
+            <p><strong>Duration:</strong> September 2020 – November 2022 | Bridgewater, NJ</p>
+            <button class="show-btn" onclick="toggleDetails('details4')">Show Details</button>
+            <div id="details4" class="details">
+                <ul>
+                    <li>Responsible for managing HVAC projects from inception to completion, including planning, design, procurement, and installation phases.</li>
+                    <li>Experienced in commissioning, qualification and implementation of Building Management System (BMS) and Building Automation System (BAS).</li>
+                    <li>Collected water samples (WFI, DI water, WFI) and gas samples for gas distribution systems.</li>
+                    <li>Performed temperature mapping studies for warehouse and cold storage CTUs using Kaye 2000 and Ellab data loggers, supporting distribution and cold-chain compliance requirements.</li>
+                    <li>Authored and executed HVAC/dehumidification commissioning and qualification protocols for warehouse and utility areas, coordinating chilled water and compressed air system verifications with Facilities.</li>
+                    <li>Drafted and executed Validation and Installation Qualification (IQ), Operational Qualification (OQ), Performance Qualification (PQ) for process Instrument / Equipments such as autoclaves, mixers, Bioreactors, Tanks, and Lyophilizers in compliance with cGMP and FDA regulations.</li>
+                    <li>Experienced in commissioning and qualification of the analytical laboratory equipment such as Titrators, Turbidity Meters, FTIR, Plate Reader, Elemental Analyzers, Air Samplers, Weighing Balance, Spectrophotometer (UV-Vis), Chromatography equipment (Ion, HPLC, and GC), Ovens, Incubators and Flow Injection Analyzers.</li>
+                    <li>Performed air flow visualization studies and room recovery tests to ensure compliance with regulatory standards.</li>
+                    <li>Performed commissioning and qualification for freezers, coolers, warehouses, etc.</li>
+                    <li>Collaborated with multidisciplinary teams to integrate HVAC systems with other building systems, such as electrical and plumbing, BAS and BMS.</li>
+                    <li>Supported annual Media Fill requalification for vial filling operations - drafting fill protocols, executing aseptic process simulations, coordinating environmental monitoring, and reviewing final reports for compliance with GMP aseptic processing requirements.</li>
+                    <li>Followed Computer Systems Validation (CSV) Master Plan to author, review and approve CSV deliverables for systems as per GxP (GLP, GCP, and GMP) FDA Assessment.</li>
+                    <li>Executed IQ/OQ/PQ protocols for automated visual inspection systems integrated with packaging lines, coordinating with automation engineering to confirm reject/accept logic.</li>
+                    <li>Supported automated inspection system troubleshooting including camera alignment and conveyor timing adjustments, partnering with automation vendors to resolve recurring vision-software faults.</li>
+                    <li>Involved in reviewing Validation deliverables Validation Master Plan (VMP), Validation Summary Documents (VSD), Validation Summary Reports (VSR), Installation Qualification/ Operational Qualification/ Performance Qualification, and Requirements Traceability Matrix.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Validation Analyst: Abbvie Pharmaceuticals, Inc</h3>
+            <p><strong>Duration:</strong> December 2018 – September 2020 | Lake County, IL</p>
+            <button class="show-btn" onclick="toggleDetails('details5')">Show Details</button>
+            <div id="details5" class="details">
+                <ul>
+                    <li>Drafted and executed qualification protocols for the Dry Heat and Moist Heat Sterilization, Purification, Sterile Filtration, Lyophilization, Cold Chain management, Container Closure Validation, and Utilities Validation.</li>
+                    <li>Performed periodic validation reviews on equipment, utility and facilities e.g. Freezers/coolers, biosafety cabinets, RO/DI and WFI Water Systems, Fermentors, Compressed air distribution systems.</li>
+                    <li>Performed protocol drafting and execution process for Kneat paperless validation software. Initiated change control and drafted user requirements for HVAC, water systems, and gas distribution systems.</li>
+                    <li>Performed Piping Instrumentation Diagram (P&ID) walkdown for utilities, facilities and including HVAC.</li>
+                    <li>Drafted and executed IOPQ and UAT Test Steps for Application Software's like Unicorn, TIAMO, Omnis, OPUS, AUTOPOL V PLUS, GEN5, WinkQCL, In-Built CliniMacs Firmware, Quant studio, and NucleoView for NC 200.</li>
+                    <li>Prepared and executed Validation and Installation Qualification (IQ), Operational Qualification (OQ), and Performance Qualification (PQ) for process equipment such as autoclaves, mixers, cold-rooms, storage, facilities, lab equipment (FTIR, HPLC, UV-VIS), incubators, cabinets, flow hoods, aseptic filling machines, bioreactors, and process control systems.</li>
+                    <li>Performed Commissioning & Qualification for upstream & downstream equipment such as dual-purpose (1000L) Bioreactors, Harvest Tanks, CIP skids, and Nano-filtration skid.</li>
+                    <li>Authored and executed annual Media Fill (Aseptic Process Simulation) protocols for vial filling lines, including environmental monitoring during the fill and review/approval of qualification documentation to support ongoing aseptic process requalification.</li>
+                    <li>Experienced in writing and executing IOQ protocols for Clean HVAC System final fill and O2, N2, CO2, and Compressed gases.</li>
+                    <li>Experienced in commissioning and qualification of dry heat sterilizers and steam sterilizers.</li>
+                    <li>Executed IOPQ for Cell Viability Analyzer, Osmometers, Filter Integrity Testers, and P4 Bottle Centrifuge.</li>
+                    <li>Assisted the Validation team in documenting the OQ scripts for modules - Assay Design, Plan Analytical Runs, Study Design, Study Configuration, Bi-Directional Instrument Interfaces with LIMS, Sample Handling, and Sample Tracking in Lab Vantage LIMS.</li>
+                    <li>Partnered with Validation/Quality departments in documenting and implementing Standard Operating Procedures (SOPs) for all aspects of the validation life cycle, in accordance with FDA regulations, particularly 21 CFR Part 11 and GxP regulations.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Commissioning, Qualification & Validation (CQV):</strong> Autoclaves, lyophilizers, bioreactors, fermenters, filling systems, mixers, dry heat sterilizers, depyrogenation ovens, isolators, steam sterilizers, chromatography skids, biosafety cabinets, centrifuges, coldrooms, 8-cavity sealers, lasers, waterbaths, roller racks, Media Fill/Aseptic Process Simulation, etc.</li>
+            <li><strong>Computer System Validation (CSV):</strong> 21 CFR Part 11, 210, 211, 820, cGxP, IQ, OQ, PQ, RTM, URS, FRS, SOPs, Summary Report, Audit Trail.</li>
+            <li><strong>Technical Writing:</strong> Validation Plan (VP), Functional Specifications (FS), Design Specifications (DS), Requirement Traceability Matrix (RTM), Test Protocol, Test Plan, Test Cases, Test Summary, Discrepancy Report, GxP compliance report generation, software documentation, Data Integrity assessments, risk management, project plans.</li>
+            <li><strong>Software Skills:</strong> Advanced Excel, MS Project, SAP Access, Kneat, DeltaV, LIMS, BMS, EMS, BAS, MS Word, PowerPoint, SharePoint, HP ALM, ETQ, Trackwise, eDocs, Compliance Wire, Veeva Vault, Lives International, SmartSolve, XpertVal64.</li>
+            <li><strong>Quality System Management:</strong> 21 CFR Part 11, 210, 211 for Pharmaceuticals, Part 820 Medical Devices, ISO 13485:2016 Medical Devices, ISO 14971:2012 Risk Management, CAPA, Change Control, Risk Assessment, Root Cause Analysis, Cause and Effect, 5 Why's, Defect Tracking, PFMEA, and Investigation.</li>
+        </ul>
+    </section>
+
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <p><strong>Indiana University Purdue University (IUPUI), Indiana, USA</strong></p>
+        <p>M.S: Computer & Information Sciences</p>
+    </section>
+
+    <footer style="position: relative;">
+        <p>© 2026 Charan Tej D's Portfolio</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "" ) {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
