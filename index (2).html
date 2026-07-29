@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charan Tej D — Validation Engineer</title>
+<link rel="icon" href="charan's_pic.JPG" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101820;
+  --steel:#1d3a52;
+  --steel-2:#2c5578;
+  --paper:#eef1f4;
+  --card:#ffffff;
+  --line:#d7dee4;
+  --pass:#0e7c58;
+  --pass-soft:#e4f5ee;
+  --amber:#b7791f;
+  --muted:#5b6b78;
+  --font-display:'Space Grotesk', sans-serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+}
+
+.blueprint-bg{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:42px 42px;
+  opacity:0.35;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+}
+
+.hero{
+  position:relative;
+  min-height:78vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 24px 60px;
+  overflow:hidden;
+}
+
+.protocol-tag{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--steel-2);
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:6px 14px;
+  border-radius:100px;
+  margin-bottom:28px;
+  opacity:0;
+  animation:fadeUp 0.7s ease forwards;
+}
+
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(2.6rem, 6vw, 4.6rem);
+  margin:0 0 12px;
+  letter-spacing:-0.02em;
+  background:linear-gradient(100deg, var(--ink) 20%, var(--steel-2) 55%, var(--pass) 85%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  opacity:0;
+  animation:fadeUp 0.8s ease 0.15s forwards;
+}
+
+.hero .subtitle{
+  font-family:var(--font-mono);
+  font-size:clamp(0.95rem, 2vw, 1.15rem);
+  color:var(--muted);
+  border-right:2px solid var(--steel-2);
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 2.2s steps(38,end) 0.9s forwards, blink 0.8s step-end infinite 0.9s;
+}
+
+.hero .meta{
+  margin-top:30px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+  font-family:var(--font-mono);
+  font-size:0.85rem;
+  color:var(--muted);
+  opacity:0;
+  animation:fadeUp 0.8s ease 3.2s forwards;
+}
+.hero .meta span{
+  padding:4px 10px;
+  border-left:2px solid var(--pass);
+}
+
+@keyframes fadeUp{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);}}
+@keyframes typing{from{width:0;} to{width:38ch;}}
+@keyframes blink{50%{border-color:transparent;}}
+
+.stamp{
+  position:absolute;
+  top:26px;
+  right:6%;
+  width:118px;
+  height:118px;
+  border:3px solid var(--pass);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:var(--font-mono);
+  font-weight:600;
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  color:var(--pass);
+  text-transform:uppercase;
+  transform:rotate(-14deg) scale(0);
+  opacity:0;
+  animation:stampIn 0.5s cubic-bezier(.3,1.6,.5,1) 1.4s forwards;
+}
+.stamp::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid var(--pass);
+  border-radius:50%;
+}
+@keyframes stampIn{
+  0%{transform:rotate(-14deg) scale(2.2); opacity:0;}
+  60%{transform:rotate(-14deg) scale(0.92); opacity:1;}
+  100%{transform:rotate(-14deg) scale(1); opacity:1;}
+}
+
+section{
+  max-width:880px;
+  margin:0 auto;
+  padding:60px 24px;
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:28px;
+}
+.section-head .idx{
+  font-family:var(--font-mono);
+  color:var(--pass);
+  font-size:0.9rem;
+}
+.section-head h2{
+  font-family:var(--font-display);
+  font-size:1.6rem;
+  margin:0;
+  letter-spacing:-0.01em;
+}
+.section-head::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.summary-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+.summary-list li{
+  position:relative;
+  padding-left:26px;
+  color:var(--ink);
+  font-size:0.98rem;
+}
+.summary-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:9px;
+  height:9px;
+  border-radius:2px;
+  background:var(--pass);
+  transform:rotate(45deg);
+}
+
+.timeline{
+  position:relative;
+  padding-left:34px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:9px;
+  top:6px;
+  bottom:6px;
+  width:2px;
+  background:linear-gradient(var(--pass), var(--steel-2));
+}
+.job{
+  position:relative;
+  margin-bottom:20px;
+}
+.job::before{
+  content:"";
+  position:absolute;
+  left:-34px;
+  top:22px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:var(--card);
+  border:3px solid var(--pass);
+}
+.job-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 24px;
+  transition:box-shadow 0.3s ease, transform 0.3s ease;
+}
+.job-card:hover{
+  box-shadow:0 12px 30px rgba(16,24,32,0.08);
+  transform:translateY(-2px);
+}
+.job-card h3{
+  font-family:var(--font-display);
+  font-size:1.15rem;
+  margin:0 0 4px;
+}
+.job-card .duration{
+  font-family:var(--font-mono);
+  font-size:0.82rem;
+  color:var(--muted);
+  margin-bottom:14px;
+  display:block;
+}
+.show-btn{
+  background:none;
+  border:1px solid var(--steel-2);
+  color:var(--steel-2);
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  padding:8px 16px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:background 0.2s ease, color 0.2s ease;
+}
+.show-btn:hover{
+  background:var(--steel-2);
+  color:#fff;
+}
+.details{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s ease;
+  margin-top:0;
+}
+.details.open{
+  max-height:2200px;
+  margin-top:18px;
+}
+.details ul{
+  margin:0;
+  padding-left:20px;
+}
+.details li{
+  margin-bottom:9px;
+  font-size:0.94rem;
+}
+
+.skills-grid{
+  display:grid;
+  gap:16px;
+}
+.skill-row{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:16px 20px;
+}
+.skill-row strong{
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--pass);
+  display:block;
+  margin-bottom:6px;
+}
+.skill-row span{
+  font-size:0.92rem;
+  color:var(--ink);
+}
+
+.edu-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:22px 24px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.edu-card .school{font-family:var(--font-display); font-weight:600;}
+.edu-card .degree{color:var(--muted); font-family:var(--font-mono); font-size:0.85rem;}
+
+footer{
+  text-align:center;
+  padding:34px 24px;
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+}
+
+@media (max-width:600px){
+  .stamp{display:none;}
+  .timeline{padding-left:26px;}
+  .job::before{left:-26px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
+  .hero .subtitle{width:38ch; border-right:none;}
+}
+</style>
+</head>
+<body>
+<div class="blueprint-bg"></div>
+
+<section class="hero">
+  <div class="protocol-tag">Protocol No. CTD-2026 · Status: Qualified</div>
+  <h1>Charan Tej D</h1>
+  <div class="subtitle">Sr. Validation Engineer — CSV &amp; CQV</div>
+  <div class="meta">
+    <span>Smithfield, RI</span>
+    <span>reachctc@gmail.com</span>
+    <span>7+ yrs pharma/biotech</span>
+  </div>
+  <div class="stamp">Qualified<br>✓ Approved</div>
+</section>
+
+<section id="summary" class="reveal">
+  <div class="section-head"><span class="idx">01</span><h2>Professional Summary</h2></div>
+  <ul class="summary-list">
+    <li>7+ years of diverse experience in Computer System Validation (CSV) and Commissioning, Qualification, and Validation (CQV), with strong exposure to manufacturing, processing, and laboratory equipment across the pharmaceutical and biotech industries.</li>
+    <li>Skilled in drafting core validation deliverables including URS, Validation Plans, Risk Assessments, IQ/OQ/PQ protocols and supplemental protocols, Traceability Matrices, Summary Reports, Discrepancy Reports, deviations, and CAPA.</li>
+    <li>Experienced in creating and executing Business Requirements, Functional Specifications, Test Plans, Test Cases, Test Procedures, and Test Summary Reports, covering discovery, design, configuration, development, and functional testing for GxP systems, equipment, and laboratory instruments.</li>
+    <li>Strong background in commissioning and qualification of utilities and facilities, including HVAC, water systems (Milli-Q, DI, WFI), gas distribution systems, and Grade A/Grade B clean rooms and manufacturing areas.</li>
+    <li>Expertise in qualifying complex manufacturing and laboratory equipment such as autoclaves, lyophilizers, bioreactors, fermenters, filling systems, mixers, sterilizers, isolators, chromatography skids, and Controlled Temperature Units (CTUs), along with execution of Media Fill (Aseptic Process Simulation) studies for vial filling operations.</li>
+    <li>Authored and reviewed Media Fill protocols and final reports, defining fill volumes, incubation parameters, and acceptance criteria to ensure aseptic process simulation studies met GMP documentation standards.</li>
+    <li>Experienced in validating automation and computerized systems including DeltaV, DCS/PCS, SCADA, PLC, HMI, Historian, BAS, BMS, EMS, MES applications, and QMS.</li>
+    <li>Sound knowledge of GAMP 5 and data integrity principles, with experience performing gap analysis, remediation, periodic reviews, and change management for laboratory and manufacturing computer systems in compliance with FDA regulations.</li>
+    <li>Proficient with validation software and lab instrument applications including Kneat, Valgenesis, SmartSolve, Empower, and Unicorn for deliverables drafting, routing, and execution.</li>
+    <li>Effective collaborator partnering closely with Quality, Engineering, Manufacturing, Metrology, and IT teams to complete validation activities across multiple projects.</li>
+  </ul>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="section-head"><span class="idx">02</span><h2>Professional Experience</h2></div>
+  <div class="timeline">
+
+    <div class="job">
+      <div class="job-card">
+        <h3>Sr Validation Engineer — Organogenesis</h3>
+        <span class="duration">Nov 2025 – Present · Smithfield, RI</span>
+        <button class="show-btn" onclick="toggleDetails('details1', this)">Show Details</button>
+        <div id="details1" class="details">
+          <ul>
+            <li>Performed equipment qualification and validation for Controlled Temperature Units (CTUs) including freezers, ultra-low freezers, liquid nitrogen (LN2) freezers, chest freezers, refrigerators, and undercounter refrigerators.</li>
+            <li>Executed qualification of incubators including QC incubators, Percival incubators, and Wheaton incubators.</li>
+            <li>Qualified Biosafety Cabinets (BSCs), Laminar Airflow (LAF) units, Autoclaves, and Depyrogenation Ovens/Tunnels, including smoke studies to verify airflow patterns and containment integrity in support of aseptic processing areas.</li>
+            <li>Executed Media Fill (Aseptic Process Simulation) studies for manufacturing operations to qualify aseptic processing capability and support annual requalification requirements.</li>
+            <li>Qualified compressed gas systems (nitrogen, Clean Dry Air) supporting media fill and aseptic processing operations, verifying gas purity and delivery performance.</li>
+            <li>Performed environmental monitoring and particle count verification for BSCs and autoclaves during media fill execution to confirm aseptic conditions.</li>
+            <li>Performed qualification of both QC and Refrigerated centrifuges and coldrooms to support ongoing GMP compliance.</li>
+            <li>Qualified 8-cavity sealers, heat sealers, lasers, depyrogenation ovens, autoclaves, waterbaths, and roller racks across manufacturing and laboratory areas.</li>
+            <li>Identified, investigated, and authored deviations for out-of-specification and non-conforming results during qualification execution.</li>
+            <li>Drafted IQ/OQ/PQ protocols for laboratory and manufacturing equipment, and documented/reviewed validation summary reports ensuring compliance with cGMP and site quality standards.</li>
+            <li>Managed validation documentation and execution using Lives International, Veeva, SmartSolve, and XpertVal64.</li>
+            <li>Performed temperature mapping and requalification studies for CTUs and coldrooms to verify uniformity and recovery within specified operating ranges.</li>
+            <li>Reviewed and approved validation protocols and reports authored by peers, ensuring consistency with site SOPs, cGMP, and FDA regulatory requirements.</li>
+            <li>Collaborated cross-functionally with Quality, Engineering, and Facilities teams to resolve deviations, support CAPA implementation, and maintain equipment qualification schedules.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-card">
+        <h3>Sr Validation Engineer — Eli Lilly and Company</h3>
+        <span class="duration">Mar 2025 – Nov 2025 · Pleasant Prairie, WI</span>
+        <button class="show-btn" onclick="toggleDetails('details2', this)">Show Details</button>
+        <div id="details2" class="details">
+          <ul>
+            <li>Led the qualification of over 25 GMP-compliant laboratory, analytical, and manufacturing systems, including isolators, RABS, biosafety cabinets, vial filling lines, and instruments such as HPLC systems, MALDI-TOF mass spectrometers, UV-Vis spectrophotometers, pH meters, TOC analyzers, and analytical balances.</li>
+            <li>Executed IQ/OQ/PQ protocols for standalone and computerized systems, ensuring adherence to FDA regulations, 21 CFR Part 11, data integrity principles, and site quality standards.</li>
+            <li>Supported moist heat sterilization validation by qualifying new autoclaves, optimizing load configurations, and executing temperature mapping studies using Ellab data loggers, Kaye Validators, Kaye Val Probes, and Vaisala systems.</li>
+            <li>Managed qualification and validation of auxiliary lab and environmental equipment including microcentrifuges, osmometers, Milli-Q systems, water baths, vacuum systems, pipettes, vortex mixers, and viable/non-viable environmental samplers.</li>
+            <li>Performed full lifecycle commissioning and qualification (C&amp;Q) for critical utilities and manufacturing systems including HVAC, terminal sterilizers, purified water systems, and parts washers.</li>
+            <li>Oversaw multiple validation projects, including automation upgrades, utility expansions (e.g., 90-psi compressed air system), and lab modernization efforts.</li>
+            <li>Authored and reviewed validation documentation including URS, risk assessments, traceability matrices, and summary reports, maintaining alignment with site SOPs and global policies.</li>
+            <li>Led data integrity and gap assessments covering computerized and hybrid systems, evaluating record types, data flows, audit trails, user access, and system configurations in line with ALCOA+ and 21 CFR Part 11.</li>
+            <li>Digitally managed validation activities through Kneat Gx, enabling end-to-end documentation traceability and audit readiness.</li>
+            <li>Collaborated cross-functionally with Quality, Engineering, and Manufacturing to resolve deviations, implement CAPAs, and support formal change control and impact assessments.</li>
+            <li>Contributed to requalification planning and periodic reviews as part of the site Validation Master Plan (VMP), and participated in internal, client, and regulatory audits.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-card">
+        <h3>Sr Validation Engineer — Hovione New Jersey</h3>
+        <span class="duration">Nov 2022 – Mar 2025 · East Windsor, NJ</span>
+        <button class="show-btn" onclick="toggleDetails('details3', this)">Show Details</button>
+        <div id="details3" class="details">
+          <ul>
+            <li>Drafted and executed IQ/OQ/PQ protocols for HVAC and Water systems like Milli Q water, Deionized water (DI), and Water for Injection (WFI), supporting media fill and aseptic processing areas.</li>
+            <li>Worked on commissioning and qualification of gaseous distribution systems like nitrogen, Clean Dry Air (CDA), and carbon dioxide.</li>
+            <li>Executed Media Fill (Aseptic Process Simulation) studies to verify aseptic manufacturing readiness and support annual requalification requirements, in coordination with utility and facilities qualification activities.</li>
+            <li>Executed IOPQ protocols for process equipment including Zonal Ultra Centrifuge, Tangential Flow Filtration system, 500L &amp; 2000L Single Use Bioreactors, Chromatography column skids, Biosafety Cabinets, Isolators, Vial Washer, Autoclave Transition Isolator, and benchtop equipment.</li>
+            <li>Led execution of IQ/OQ/PQ protocols for automated visual inspection systems supporting vial filling operations, ensuring regulatory compliance and operational readiness.</li>
+            <li>Executed temperature mapping and requalification studies for CTUs and coldrooms using Kaye Validator AVS, Kaye 2000, and Ellab data loggers.</li>
+            <li>Generated and executed commissioning, decommissioning, and IQ/OQ documentation for HVAC/dehumidification systems supporting manufacturing suites.</li>
+            <li>Conducted various smoke studies to study the air flow pattern for BSCs, Laminar Airflow Pass Throughs, and whole room smoke studies.</li>
+            <li>Developed and executed validation protocols (IQ, OQ, PQ) for room qualifications, including environmental monitoring and particle count testing.</li>
+            <li>Troubleshot real-time automated inspection system issues including camera alignment, conveyor timing, and vision software calibration.</li>
+            <li>Managed compliant documentation in Valgenesis and Veeva, coordinating with quality and engineering teams on deviations and CAPAs.</li>
+            <li>Led computer system validation activities for LIMS, developing and executing UAT, test plans, data migration plans, and IQ/OQ/PQ deliverables, including integration with Veeva Vault QMS and Trackwise.</li>
+            <li>Reviewed Risk Assessment Documentation, reviewed CAPA, and drafted Remediation Plans after GAP Analysis.</li>
+            <li>Performed all phases of end-to-end testing including UAT, Functionality Testing, Regression Testing, Negative Testing, and System Testing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-card">
+        <h3>Sr Validation Engineer — Amneal Pharmaceuticals</h3>
+        <span class="duration">Sep 2020 – Nov 2022 · Bridgewater, NJ</span>
+        <button class="show-btn" onclick="toggleDetails('details4', this)">Show Details</button>
+        <div id="details4" class="details">
+          <ul>
+            <li>Responsible for managing HVAC projects from inception to completion, including planning, design, procurement, and installation phases.</li>
+            <li>Experienced in commissioning, qualification and implementation of Building Management System (BMS) and Building Automation System (BAS).</li>
+            <li>Collected water samples (WFI, DI water) and gas samples for gas distribution systems.</li>
+            <li>Performed temperature mapping studies for warehouse and cold storage CTUs using Kaye 2000 and Ellab data loggers, supporting cold-chain compliance requirements.</li>
+            <li>Authored and executed HVAC/dehumidification commissioning and qualification protocols for warehouse and utility areas.</li>
+            <li>Drafted and executed IQ/OQ/PQ for process equipment such as autoclaves, mixers, bioreactors, tanks, and lyophilizers in compliance with cGMP and FDA regulations.</li>
+            <li>Experienced in commissioning and qualification of analytical laboratory equipment such as Titrators, Turbidity Meters, FTIR, Plate Reader, Elemental Analyzers, Air Samplers, Weighing Balance, Spectrophotometer (UV-Vis), Chromatography equipment (Ion, HPLC, GC), Ovens, Incubators, and Flow Injection Analyzers.</li>
+            <li>Performed air flow visualization studies and room recovery tests to ensure compliance with regulatory standards.</li>
+            <li>Performed commissioning and qualification for freezers, coolers, and warehouses.</li>
+            <li>Collaborated with multidisciplinary teams to integrate HVAC systems with electrical, plumbing, BAS, and BMS.</li>
+            <li>Supported annual Media Fill requalification for vial filling operations, coordinating environmental monitoring and reviewing final reports for GMP compliance.</li>
+            <li>Followed the CSV Master Plan to author, review and approve CSV deliverables per GxP (GLP, GCP, GMP) FDA Assessment.</li>
+            <li>Executed IQ/OQ/PQ protocols for automated visual inspection systems integrated with packaging lines.</li>
+            <li>Reviewed Validation Master Plan (VMP), Validation Summary Documents/Reports, and Requirements Traceability Matrix.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-card">
+        <h3>Validation Analyst — Abbvie Pharmaceuticals, Inc</h3>
+        <span class="duration">Dec 2018 – Sep 2020 · Lake County, IL</span>
+        <button class="show-btn" onclick="toggleDetails('details5', this)">Show Details</button>
+        <div id="details5" class="details">
+          <ul>
+            <li>Drafted and executed qualification protocols for Dry Heat and Moist Heat Sterilization, Purification, Sterile Filtration, Lyophilization, Cold Chain management, Container Closure Validation, and Utilities Validation.</li>
+            <li>Performed periodic validation reviews on equipment, utility and facilities e.g. Freezers/coolers, biosafety cabinets, RO/DI and WFI Water Systems, Fermentors, Compressed air distribution systems.</li>
+            <li>Performed protocol drafting and execution for Kneat paperless validation software; initiated change control and drafted user requirements for HVAC, water, and gas distribution systems.</li>
+            <li>Performed P&amp;ID walkdowns for utilities, facilities, and HVAC.</li>
+            <li>Drafted and executed IOPQ and UAT test steps for application software including Unicorn, TIAMO, Omnis, OPUS, AUTOPOL V PLUS, GEN5, WinkQCL, CliniMacs Firmware, Quant studio, and NucleoView for NC 200.</li>
+            <li>Prepared and executed IQ/OQ/PQ for process equipment such as autoclaves, mixers, cold-rooms, lab equipment (FTIR, HPLC, UV-VIS), incubators, cabinets, flow hoods, aseptic filling machines, bioreactors, and process control systems.</li>
+            <li>Performed C&amp;Q for upstream &amp; downstream equipment such as dual-purpose (1000L) Bioreactors, Harvest Tanks, CIP skids, and Nano-filtration skid.</li>
+            <li>Authored and executed annual Media Fill protocols for vial filling lines, including environmental monitoring and review/approval of qualification documentation.</li>
+            <li>Experienced in writing and executing IOQ protocols for Clean HVAC System final fill and O2, N2, CO2, and compressed gases.</li>
+            <li>Executed IOPQ for Cell Viability Analyzer, Osmometers, Filter Integrity Testers, and P4 Bottle Centrifuge.</li>
+            <li>Assisted in documenting OQ scripts for LabVantage LIMS modules including Assay Design, Study Design, Sample Handling, and Sample Tracking.</li>
+            <li>Partnered with Validation/Quality departments on SOPs across the validation life cycle, per FDA regulations including 21 CFR Part 11 and GxP.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="section-head"><span class="idx">03</span><h2>Skills</h2></div>
+  <div class="skills-grid">
+    <div class="skill-row">
+      <strong>Commissioning, Qualification &amp; Validation (CQV)</strong>
+      <span>Autoclaves, lyophilizers, bioreactors, fermenters, filling systems, mixers, dry heat sterilizers, depyrogenation ovens, isolators, steam sterilizers, chromatography skids, biosafety cabinets, centrifuges, coldrooms, 8-cavity sealers, lasers, waterbaths, roller racks, Media Fill/Aseptic Process Simulation.</span>
+    </div>
+    <div class="skill-row">
+      <strong>Computer System Validation (CSV)</strong>
+      <span>21 CFR Part 11, 210, 211, 820, cGxP, IQ, OQ, PQ, RTM, URS, FRS, SOPs, Summary Report, Audit Trail.</span>
+    </div>
+    <div class="skill-row">
+      <strong>Technical Writing</strong>
+      <span>Validation Plan, Functional Specifications, Design Specifications, Requirement Traceability Matrix, Test Protocol, Test Plan, Test Cases, Test Summary, Discrepancy Report, GxP compliance reporting, Data Integrity assessments, risk management, project plans.</span>
+    </div>
+    <div class="skill-row">
+      <strong>Software</strong>
+      <span>Advanced Excel, MS Project, SAP Access, Kneat, DeltaV, LIMS, BMS, EMS, BAS, MS Word, PowerPoint, SharePoint, HP ALM, ETQ, Trackwise, eDocs, Compliance Wire, Veeva Vault, Lives International, SmartSolve, XpertVal64.</span>
+    </div>
+    <div class="skill-row">
+      <strong>Quality System Management</strong>
+      <span>21 CFR Part 11, 210, 211 (Pharmaceuticals), Part 820 (Medical Devices), ISO 13485:2016, ISO 14971:2012 Risk Management, CAPA, Change Control, Risk Assessment, Root Cause Analysis, 5 Why's, Defect Tracking, PFMEA, Investigation.</span>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="reveal">
+  <div class="section-head"><span class="idx">04</span><h2>Education</h2></div>
+  <div class="edu-card">
+    <div>
+      <div class="school">Indiana University Purdue University (IUPUI)</div>
+      <div class="degree">M.S. Computer &amp; Information Sciences</div>
+    </div>
+    <div class="degree">Indiana, USA</div>
+  </div>
+</section>
+
+<footer>© 2026 Charan Tej D — Validation Engineering Portfolio</footer>
+
+<script>
+function toggleDetails(id, btn){
+  var el = document.getElementById(id);
+  var open = el.classList.toggle('open');
+  btn.textContent = open ? 'Hide Details' : 'Show Details';
+}
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
